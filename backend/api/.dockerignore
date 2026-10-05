@@ -1,0 +1,7 @@
+tmp/
+bin/
+*.exe
+*.test
+*.out
+.air.toml
+.golangci.yml

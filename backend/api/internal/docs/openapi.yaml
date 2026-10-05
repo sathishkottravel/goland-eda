@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: goland-eda api
+  version: 0.1.0
+  description: REST endpoints of the api service. GraphQL is served at POST /graphql.
+paths:
+  /health:
+    get:
+      summary: Liveness check
+      responses:
+        "200":
+          description: Service is up
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+  /api/v1/hello:
+    get:
+      summary: Greeting
+      parameters:
+        - name: name
+          in: query
+          required: false
+          schema: { type: string, example: Kafka }
+      responses:
+        "200":
+          description: Greeting message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: { type: string, example: "Hello, Kafka!" }

@@ -1,0 +1,12 @@
+# Local development overrides:
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
+services:
+  kafka:
+    ports:
+      - "${KAFKA_EXTERNAL_PORT:-9092}:9092"
+    environment:
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+  api:
+    ports:
+      - "${API_PORT:-8080}:${PORT:-8080}"

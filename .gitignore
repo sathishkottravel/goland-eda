@@ -1,0 +1,46 @@
+# --- Go ---
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.*
+vendor/
+go.work.sum
+/backend/*/bin/
+/backend/*/tmp/
+
+# --- Node / k6 build ---
+node_modules/
+dist/
+build/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Env & secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+secrets/
+
+# --- Claude Code (never commit) ---
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+**/.credentials.json
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,14 @@
+{
+  "name": "goland-eda-k6",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@types/k6": "^2.3.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}
