@@ -19,6 +19,7 @@ docker compose --profile test run --rm --build k6 run smoke.js
 | What        | URL                                    |
 |-------------|----------------------------------------|
 | Swagger UI  | http://localhost:8080/swagger          |
+| GraphQL playground | http://localhost:8080/playground |
 | GraphQL     | `POST` http://localhost:8080/graphql   |
 | Health      | http://localhost:8080/health           |
 
