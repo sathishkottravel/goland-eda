@@ -126,6 +126,7 @@ Kept deliberately slim — one third-party dependency:
 | POST   | `/graphql`      | GraphQL (`health`, `hello(name)`) |
 | GET    | `/openapi.yaml` | OpenAPI 3 spec |
 | GET    | `/swagger`      | Swagger UI |
+| GET    | `/playground`   | GraphQL playground (Apollo Sandbox) |
 
 ```bash
 curl localhost:8080/health
@@ -133,6 +134,14 @@ curl "localhost:8080/api/v1/hello?name=demo"
 curl -X POST localhost:8080/graphql -H "Content-Type: application/json" \
   -d '{"query":"{ hello(name: \"demo\") }"}'
 ```
+
+### GraphQL playground
+
+Open http://localhost:8080/playground for [Apollo Sandbox](https://www.apollographql.com/docs/graphos/platform/sandbox), embedded and pointed at this server's `/graphql`. It reads the schema through introspection, so you get schema docs, autocomplete and a query editor. Like Swagger UI, the page is a small embedded HTML file that loads the tool from a CDN (Apollo's).
+
+Any other GraphQL client works too: point Altair, Postman or Insomnia at `http://localhost:8080/graphql`.
+
+For a public deployment you may want to turn off `/playground` and `/swagger`; that will be a config flag when it's needed.
 
 ### Adding an endpoint
 

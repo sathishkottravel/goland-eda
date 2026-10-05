@@ -28,5 +28,8 @@ export default function () {
     "graphql hello": (r) => r.json("data.hello") === "Hello, k6!",
   });
 
+  const playground = get("/playground");
+  check(playground, { "playground 200": (r) => r.status === 200 });
+
   sleep(1);
 }
